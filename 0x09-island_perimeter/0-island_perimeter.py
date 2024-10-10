@@ -2,7 +2,16 @@
 """This will show solve the island perimeter task """
 
 
-def island_perimeter(grid):
+def island_perimeter(grid: list) -> int:
+    """
+    this will use the grid which is a
+    list of list and returns the perimeter
+    of the island given from the grids
+    Args:
+        grids: This is a list of list
+    Returns:
+        This will returns integer of the perimeter
+    """
     perimeter = 0
     rows = len(grid)
     cols = len(grid[0])
