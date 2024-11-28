@@ -4,7 +4,7 @@ total."""
 from typing import List
 
 
-def makeChange(coins: List[int], total:int):
+def makeChange(coins: List[int], total: int):
     """
     Determine the fewest number of coins needed to meet a given total.
 
@@ -28,6 +28,5 @@ def makeChange(coins: List[int], total:int):
         while (total >= coins[i]):
             total -= coins[i]
             used_coins.append(coins[i])
-        i -= 1
-    
+        i -= 1    
     return(len(used_coins))
