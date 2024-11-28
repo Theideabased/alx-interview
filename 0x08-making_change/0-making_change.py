@@ -16,7 +16,7 @@ def makeChange(coins: List[int], total: int):
     int: Fewest number of coins needed to reach the total, or -1 if it
     cannot be done.
     """
-     if total <= 0:
+    if total <= 0:
         return 0
     else:
         coin_length = len(coins)
