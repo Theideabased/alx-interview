@@ -16,17 +16,22 @@ def makeChange(coins: List[int], total: int):
     int: Fewest number of coins needed to reach the total, or -1 if it
     cannot be done.
     """
-    coin_length = len(coins)
-    for i in range(coin_length):
-        for j in range(0, coin_length - i - 1):
-            if coins[j] > coins[j + 1]:
-                coins[j], coins[j+1] = coins[j+1], coins[j]
-    used_coins = []
-    n = len(coins)
-    i = n - 1
-    while (i >= 0):
-        while (total >= coins[i]):
-            total -= coins[i]
-            used_coins.append(coins[i])
-        i -= 1    
-    return(len(used_coins))
+     if total <= 0:
+        return 0
+    else:
+        coin_length = len(coins)
+        for i in range(coin_length):
+            for j in range(0, coin_length - i - 1):
+                if coins[j] > coins[j + 1]:
+                    coins[j], coins[j+1] = coins[j+1], coins[j]
+        used_coins = []
+        n = len(coins)
+        i = n - 1
+        while (i >= 0):
+            while (total >= coins[i]):
+                total -= coins[i]
+                used_coins.append(coins[i])
+            i -= 1
+        if total != 0:
+            return -1
+        return (len(used_coins))
